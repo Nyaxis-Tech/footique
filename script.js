@@ -91,6 +91,29 @@ function initAnimation(){
         duration: 2,
         ease: Expo.easeInOut,
     })
+
+    // Logo Animation
+    const paths = document.querySelectorAll("#nav-logo path");
+    paths.forEach(path => {
+        const length = path.getTotalLength();
+        path.style.strokeDasharray = length;
+        path.style.strokeDashoffset = length;
+    });
+
+    gsap.to(paths, {
+        strokeDashoffset: 0,
+        duration: 2,
+        ease: "power2.inOut",
+        delay: 1, // Wait a bit for other animations
+        stagger: 0.1 // Draw paths one by one slightly
+    });
+
+    gsap.to(paths, {
+        fill: "white",
+        duration: 1,
+        delay: 2.5, // Start filling after drawing is mostly done
+        ease: "power2.out"
+    });
 }
 
 initAnimation();

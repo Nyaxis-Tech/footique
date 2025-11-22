@@ -121,8 +121,15 @@ a{
     /* letter-spacing: 0.1vw; */
 }
 
-#workingdiv #nav #navleft img{
+#workingdiv #nav #navleft svg{
     width: 7vw;
+    height: auto;
+}
+
+#workingdiv #nav #navleft svg path {
+    stroke: white;
+    stroke-width: 1px;
+    fill: transparent;
 }
 
 #hero{
